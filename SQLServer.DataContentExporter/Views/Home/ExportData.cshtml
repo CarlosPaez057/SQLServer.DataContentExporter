@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "ExportData";
+}
+@*<div class="form-horizontal">
+        <div class="col-md-12" style="margin-top:20px">
+
+            @Html.DropDownList("ContentObjList", (IEnumerable<SelectListItem>)ViewBag.ContentItems, new { id = "ddlContentItems", @class = "form-control" })
+        </div>
+    </div>*@
+
+
+<br />
+<br />
+@using (Html.BeginForm("ExportData", "Home", FormMethod.Post))
+{
+
+    <b>Select Content Type: </b>
+
+    @Html.DropDownList("ContentObjList", (IEnumerable<SelectListItem>)ViewBag.ContentItems, "Select")
+    <input type="submit" value="Submit" />
+}
+
+
+@*@using (Html.BeginForm("LoadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" />
+        <input type="submit" value="OK" />
+    }*@
